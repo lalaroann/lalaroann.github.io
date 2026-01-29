@@ -1,0 +1,331 @@
+/*-------- Variables ----------*/
+/* Satoshi – Light */
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-LightItalic.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Satoshi – Regular */
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-Italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Satoshi – Medium */
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-MediumItalic.woff2") format("woff2");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Satoshi – Bold */
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-BoldItalic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Satoshi – Black */
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-Black.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("fonts/Satoshi-BlackItalic.woff2") format("woff2");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+/*---------------------------------*/
+
+
+:root {
+    /* Core colors */
+    --color-bg-dark: #0D0D0D;
+    --color-beige: #F2EBDB;
+
+    /* Accents */
+    --color-accent-warm: #D97925;
+    --color-accent-blue: #2484DA;
+    --color-accent-blue-dark: #033E8C;
+
+    /* Typography */
+    --font-primary: "Satoshi", sans-serif;
+
+    /* Radius */
+    --radius-xl: 50px;
+    --radius-lg: 24px;
+    --radius-md: 12px;
+    --radius-sm: 6px;
+}
+
+/*-------- Base page setup ----------*/
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-beige);
+    font-family: var(--font-primary);
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* Headings */
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    font-weight: 700; /* Bold */
+    margin: 0 0 0.5em;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 900; /* Black */
+}
+
+h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+p {
+    font-weight: 400; /* Regular */
+    max-width: 70ch;
+}
+
+/* Links */
+a:visited{
+    color: var(--color-beige);
+}
+a:link{
+    color: var(--color-beige);
+    text-decoration: none;
+}
+a:hover{
+    color: var(--color-beige);
+    text-decoration: underline;
+}
+a:focus{
+    color: var(--color-beige);
+    text-decoration: underline;
+}
+
+/* Text Stylings - Accents */
+.warm-bold{
+    color: var(--color-accent-warm);
+    font-weight: 700;
+}
+.italic-bold-beige{
+    color: var(--color-beige);
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+/*-------- Hero Section Styles ----------*/
+.hero {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem; /* Top(it was 4rem before, but i made it 0 so it doesnt have any gaps at the top), Right/Left, Bottom */
+    text-align: center;
+}
+
+
+/*-------- Hero Video Styles ----------*/
+.hero-video { /* Container for the hero video -- The picture frame*/
+    width: 100%;
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    overflow: hidden; /* Ensure video does not overflow the container */
+    background-color: var(--color-beige); /* For any text inside the container */
+}
+
+/* NOTE: Don't try to stretch the frame, stretch the poster itself */
+
+.hero-video video { /* Target the video element inside the container -- The picture lmao */
+    width: 100%;
+    /* height: auto; */ /* Maintain aspect ratio for the video I'm going to add later*/
+    height: 50vh; /* Set a fixed height for the video -- ALSO FOR TEST*/
+    object-fit: cover; /* Ensure the video covers the container */
+    display: block;
+}
+
+/*-------- Name Header Styles ----------*/
+.name-header {
+    text-align: center;
+    margin: 20px 0;
+}
+.hero-name {
+    font-size: clamp(5rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+/*-------- Hero Subtitle Section Styles ----------*/
+.subtitle-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.meta-hero-role{
+    font-size: 1rem;
+    max-width: 60ch;
+    text-align: left;
+}
+
+.divider
+{
+    color: var(--color-beige);
+}
+
+.meta-hero-description{
+    text-align: left;
+    max-width: 50ch;
+}
+
+
+/*-------- Projects Section Styles ----------*/
+.projects-section {
+    max-width: 1000px;
+    margin: 2rem auto; /* Margins the section. 2rem as default */
+    padding: 0 1.5rem;
+}
+.section-divider{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem; /* Gap between the grid items */
+}
+
+@media only screen and (max-width: 768px) {
+    .section-divider{
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
+
+.arrow-icon{
+    width: 1.5rem;
+    height: auto;
+}
+
+
+.project-item {
+    transition: transform 0.3s ease;
+    
+    border-radius: var(--radius-lg);
+    overflow: hidden; /* Ensure content does not overflow the rounded corners */
+}
+.project-item:hover, .project-item:focus-visible {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+.project-item:hover .project-description-background,
+.project-item:focus-visible .project-description-background {
+    background-color: var(--color-accent-blue);
+}
+
+.project-item:not(:hover), .project-item:not(:focus-visible) .project-description-background { 
+    transition: all 0.3s ease; /* Smooth transition back to normal state */
+}
+
+
+.project-description-background{
+    background-color: var(--color-accent-blue-dark);
+    padding-bottom: 0.5rem;
+    padding-top: 0;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* background-color: yellow; */
+    /* Temporary background color for visibility */
+    object-fit: cover;
+}
+
+.project-title{
+    font-weight: 700; /* Bold */
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+
+}
+.project-role{
+    font-weight: 400; /* Regular */
+    margin-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Test content & heading style */
+.test-heading {
+    font-size: 2.5rem;
+    color: var(--color-accent-warm);
+    text-align: center;
+}
+.test-content {
+    font-size: 1.2rem;
+    color: var(--color-accent-blue);
+    text-align: center;
+}
+
