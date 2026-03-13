@@ -104,17 +104,54 @@
     --radius-lg: 24px;
     --radius-md: 12px;
     --radius-sm: 6px;
+
+    /* Layout */
+    --max-width-container: 1000px;
+}
+
+/* Navigation Bar */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar {
+    background-color: var(--color-bg-dark);
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    height: 60px;
+
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+
+}
+.nav-logo {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--color-beige);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem; /* Space between links */
 }
 
 /*-------- Base page setup ----------*/
 body {
-    background-color: var(--color-bg-dark);
+    /* background-color: var(--color-bg-dark); */
     color: var(--color-beige);
     font-family: var(--font-primary);
-    font-weight: 400; /* Regular */
+    font-weight: 400; 
     line-height: 1.6;
     margin: 0;
+
+    background: #0D0D0D;
 }
+
 
 
 /* Headings */
@@ -174,7 +211,7 @@ a:focus{
 
 /*-------- Hero Section Styles ----------*/
 .hero {
-    max-width: 1000px;
+    max-width: var(--max-width-container);
     margin: 0 auto;
     padding: 0 1.5rem 5rem; /* Top(it was 4rem before, but i made it 0 so it doesnt have any gaps at the top), Right/Left, Bottom */
     text-align: center;
@@ -198,6 +235,11 @@ a:focus{
     height: 50vh; /* Set a fixed height for the video -- ALSO FOR TEST*/
     object-fit: cover; /* Ensure the video covers the container */
     display: block;
+}
+@media only screen and (max-width: 768px) {
+    .hero-video video {
+        height: 30vh; /* Adjust height for smaller screens */
+    }
 }
 
 /*-------- Name Header Styles ----------*/
@@ -238,7 +280,7 @@ a:focus{
 
 /*-------- Projects Section Styles ----------*/
 .projects-section {
-    max-width: 1000px;
+    max-width: var(--max-width-container);
     margin: 2rem auto; /* Margins the section. 2rem as default */
     padding: 0 1.5rem;
 }
@@ -263,7 +305,7 @@ a:focus{
 
 .project-item {
     transition: transform 0.3s ease;
-    
+
     border-radius: var(--radius-lg);
     overflow: hidden; /* Ensure content does not overflow the rounded corners */
 }
@@ -273,6 +315,7 @@ a:focus{
 .project-item:hover .project-description-background,
 .project-item:focus-visible .project-description-background {
     background-color: var(--color-accent-blue);
+    
 }
 
 .project-item:not(:hover), .project-item:not(:focus-visible) .project-description-background { 
