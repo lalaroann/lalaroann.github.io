@@ -95,6 +95,10 @@
     --color-accent-warm: #D97925;
     --color-accent-blue: #2484DA;
     --color-accent-blue-dark: #033E8C;
+    ::selection {
+        background: var(--color-beige);
+        color: var(--color-accent-warm);
+    }
 
     /* Typography */
     --font-primary: "Satoshi", sans-serif;
@@ -135,10 +139,44 @@ header {
     text-decoration: none;
     font-size: 1.5rem;
 }
-.nav-links {
-    display: flex;
-    gap: 1.5rem; /* Space between links */
+.hamburger-menu {
+    display: none; /* Hide burger menu on larger screens */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
 }
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-beige);
+    border-radius: 2px;
+}
+.nav_list {
+    display: flex;
+    gap: 2rem;
+}
+.nav_list.active {
+    transform: translateX(0) !important; /* Slide in the nav links when active */
+}   
+@media only screen and (max-width: 500px) {
+    .nav_list {
+        position: fixed;
+        top: 60px; /* Below the navbar */
+        right: 0;
+        background-color: var(--color-bg-dark);
+        border-radius: var(--radius-md);
+        flex-direction: column;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 1);
+        width: 200px;
+        padding: 1rem;
+        transform: translateX(100%); /* Hide nav links by default */
+        transition: transform 0.3s ease-in-out;
+    }
+    .hamburger-menu {
+        display: flex; /* Show burger menu on smaller screens */
+    }
+}
+
 
 /*-------- Base page setup ----------*/
 body {
@@ -150,6 +188,9 @@ body {
     margin: 0;
 
     background: #0D0D0D;
+}
+ul {
+    list-style: none;
 }
 
 
@@ -179,9 +220,11 @@ p {
     max-width: 70ch;
 }
 
+
 /* Links */
 a:visited{
     color: var(--color-beige);
+    
 }
 a:link{
     color: var(--color-beige);
@@ -209,6 +252,7 @@ a:focus{
 
 
 
+
 /*-------- Hero Section Styles ----------*/
 .hero {
     max-width: var(--max-width-container);
@@ -224,15 +268,18 @@ a:focus{
     border-bottom-left-radius: var(--radius-xl);
     border-bottom-right-radius: var(--radius-xl);
     overflow: hidden; /* Ensure video does not overflow the container */
-    background-color: var(--color-beige); /* For any text inside the container */
+    /* For any text inside the container */
+    background-color: var(--color-beige);
 }
 
 /* NOTE: Don't try to stretch the frame, stretch the poster itself */
 
 .hero-video video { /* Target the video element inside the container -- The picture lmao */
     width: 100%;
-    /* height: auto; */ /* Maintain aspect ratio for the video I'm going to add later*/
-    height: 50vh; /* Set a fixed height for the video -- ALSO FOR TEST*/
+    /* Maintain aspect ratio for the video I'm going to add later*/
+    /* height: auto; */
+    /* Set a fixed height for the video -- ALSO FOR TEST*/
+    height: 40vh; 
     object-fit: cover; /* Ensure the video covers the container */
     display: block;
 }
@@ -248,16 +295,26 @@ a:focus{
     margin: 20px 0;
 }
 .hero-name {
-    font-size: clamp(5rem, 10vw, 8rem);
+    font-size: clamp(2.8rem, 8vw, 10rem);
     font-weight: 900;
     line-height: 1;
     margin-bottom: 0.5rem;
+    opacity: 0;
 }
+.hero-quote {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+
 
 /*-------- Hero Subtitle Section Styles ----------*/
 .subtitle-div{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    opacity: 0;
 }
 
 
@@ -279,6 +336,11 @@ a:focus{
 
 
 /*-------- Projects Section Styles ----------*/
+.section_headers{
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 900; /* Black */
+    margin-bottom: 1.5rem;
+}
 .projects-section {
     max-width: var(--max-width-container);
     margin: 2rem auto; /* Margins the section. 2rem as default */
