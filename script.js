@@ -1,3 +1,8 @@
+/*
+
+*/
+
+
 // Select the hamburger menu button
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 // Select the navigation links container
@@ -26,7 +31,7 @@ function animateHeroNameOnView() {
         setTimeout(() => {
             heroName.style.opacity = '1';
             heroName.style.transform = ANIMATION_TRANSFORM_UP;
-        }, 2000);
+        }, 1000); // Delay to allow the page to load before animating the hero name up
     }
 
     const subtitle_div = document.querySelector('.subtitle-div');
@@ -37,14 +42,14 @@ function animateHeroNameOnView() {
         setTimeout(() => {
             subtitle_div.style.opacity = '1';
             subtitle_div.style.transform = ANIMATION_TRANSFORM_UP;
-        }, 3000);
+        }, 1500); // Delay to allow the hero name animation to finish before animating the subtitle up
     }
 }
 /*
  * Animate section_headers and project-items when they enter the viewport.
  */
 function animateSectionHeadersOnView() {
-    const headers = document.querySelectorAll('.section_headers, .project-item');
+    const headers = document.querySelectorAll('.section_headers, .project-item, .about-content, .WhoIAm-content');
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -63,5 +68,7 @@ function animateSectionHeadersOnView() {
     });
 }
 
+
+// Initialize animations when the DOM content is loaded
 window.addEventListener('DOMContentLoaded', animateHeroNameOnView);
 window.addEventListener('DOMContentLoaded', animateSectionHeadersOnView);

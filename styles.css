@@ -341,7 +341,7 @@ a:focus{
     font-weight: 900; /* Black */
     margin-bottom: 1.5rem;
 }
-.projects-section {
+.section-container {
     max-width: var(--max-width-container);
     margin: 2rem auto; /* Margins the section. 2rem as default */
     padding: 0 1.5rem;
@@ -419,6 +419,20 @@ a:focus{
     margin-bottom: 1rem;
 }
 
+/*-------- Who I Am Section Styles ----------*/
+.WhoIAm-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem; /* Gap between the grid items */
+    line-height: 1.6;
+    
+}
+@media screen and (max-width: 768px) {
+    .WhoIAm-content {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+    
+}
 
 
 
