@@ -49,7 +49,7 @@ function animateHeroNameOnView() {
  * Animate section_headers and project-items when they enter the viewport.
  */
 function animateSectionHeadersOnView() {
-    const headers = document.querySelectorAll('.section_headers, .project-item, .about-content, .WhoIAm-content');
+    const headers = document.querySelectorAll('.section_headers, .project-item, .about-content, .WhoIAm_AsADesigner, .WhoIAm_AsATeamPlayer');
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -67,6 +67,29 @@ function animateSectionHeadersOnView() {
         observer.observe(header);
     });
 }
+
+function animateProjectItemOnHover() {
+    const projectItems = document.querySelectorAll('.project-item');
+    
+    projectItems.forEach(item => {
+        const handleEnter = () => {
+            item.style.transform = 'translate(0, -5px)'; // Lift the item up on hover/focus
+            item.style.transition = 'transform 0.3s ease';
+        };
+        
+        const handleLeave = () => {
+            item.style.transform = 'translate(0, 0)'; // Return to original position on mouse leave/blur
+            item.style.transition = 'transform 0.3s ease';
+        };
+        
+        item.addEventListener('mouseenter', handleEnter);
+        item.addEventListener('focus', handleEnter);
+        item.addEventListener('mouseleave', handleLeave);
+        item.addEventListener('blur', handleLeave);
+    });
+}
+
+window.addEventListener('DOMContentLoaded', animateProjectItemOnHover);
 
 
 // Initialize animations when the DOM content is loaded

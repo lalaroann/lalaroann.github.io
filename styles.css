@@ -295,7 +295,7 @@ a:focus{
     margin: 20px 0;
 }
 .hero-name {
-    font-size: clamp(2.8rem, 8vw, 10rem);
+    font-size: clamp(5rem, 10vw, 8rem);
     font-weight: 900;
     line-height: 1;
     margin-bottom: 0.5rem;
@@ -322,6 +322,12 @@ a:focus{
     font-size: 1rem;
     max-width: 60ch;
     text-align: left;
+}
+@media screen and (max-width: 768px) {
+    .meta-hero-role{
+        max-width: 13ch;
+    }
+    
 }
 
 .divider
@@ -366,17 +372,17 @@ a:focus{
 
 
 .project-item {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Smooth transition for background */
 
     border-radius: var(--radius-lg);
     overflow: hidden; /* Ensure content does not overflow the rounded corners */
 }
-.project-item:hover, .project-item:focus-visible {
-    transform: translateY(-5px); /* Slight lift on hover */
-}
+
+
 .project-item:hover .project-description-background,
 .project-item:focus-visible .project-description-background {
-    background-color: var(--color-accent-blue);
+    background-color: var(--color-accent-blue); /* Change background color on hover/focus */
+
     
 }
 
@@ -420,19 +426,8 @@ a:focus{
 }
 
 /*-------- Who I Am Section Styles ----------*/
-.WhoIAm-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 1rem; /* Gap between the grid items */
-    line-height: 1.6;
-    
-}
-@media screen and (max-width: 768px) {
-    .WhoIAm-content {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-    }
-    
-}
+
+
 
 
 
