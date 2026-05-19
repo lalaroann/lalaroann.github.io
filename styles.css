@@ -269,7 +269,7 @@ a:focus{
     border-bottom-right-radius: var(--radius-xl);
     overflow: hidden; /* Ensure video does not overflow the container */
     /* For any text inside the container */
-    background-color: var(--color-beige);
+    /* background-color: var(--color-beige); */
 }
 
 /* NOTE: Don't try to stretch the frame, stretch the poster itself */
@@ -279,7 +279,7 @@ a:focus{
     /* Maintain aspect ratio for the video I'm going to add later*/
     /* height: auto; */
     /* Set a fixed height for the video -- ALSO FOR TEST*/
-    height: 40vh; 
+    height: 50vh; 
     object-fit: cover; /* Ensure the video covers the container */
     display: block;
 }
