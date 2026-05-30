@@ -110,7 +110,7 @@
     --radius-sm: 6px;
 
     /* Layout */
-    --max-width-container: 1000px;
+    --max-width-container: 1000px; /* Max width for the main content container */
 }
 
 /* Navigation Bar */
@@ -289,6 +289,7 @@ a:focus{
     }
 }
 
+
 /*-------- Name Header Styles ----------*/
 .name-header {
     text-align: center;
@@ -425,7 +426,34 @@ a:focus{
     margin-bottom: 1rem;
 }
 
-/*-------- Who I Am Section Styles ----------*/
+/* ---------- Hero Image Styles ----------  */
+.hero-image {
+    width: 100%;
+    height: 500px; /* Set a fixed height for the image */
+    display: block;
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    object-fit: cover; /* Ensure the image covers the container */
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background-color: red;/* Temporary background color for visibility */
+}
+/* --------------- Project Page Styles ------ */
+.project-overview{
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    background-color: blue; /* Temporary background color for visibility */
+}
+.project-headline{
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 900; /* Black */
+    margin-bottom: 1rem;
+    background-color: red; /* Temporary background color for visibility */
+}
+
+
+
 
 
 
