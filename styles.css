@@ -448,6 +448,8 @@ a:focus{
     font-size: clamp(2.8rem, 5vw, 4rem);
     font-weight: 900; /* Black */
     margin-bottom: 1rem;
+    opacity: 0;
+    /* color: red; */
 }
 .project-header{
     color: var(--color-accent-warm);
@@ -461,6 +463,8 @@ a:focus{
     margin: 0 auto;
     text-align: center;
     padding: 0 1.5rem;
+    opacity: 0;
+    margin-bottom: 2rem;
 }
 .project-role-and-software-skills{
     display: grid;

@@ -21,7 +21,7 @@ const ANIMATION_TRANSFORM_UP = 'translateY(0)';
 const ANIMATION_TRANSFORM_SUBTITLE = 'translateY(20px)';
 
 function animateHeroNameOnView() {
-    const heroName = document.querySelector('.hero-name');
+    const heroName = document.querySelector('.hero-name,.project-hero-header');
     if (heroName) {
         // Start hidden and moved down
         heroName.style.opacity = '0';
@@ -34,7 +34,7 @@ function animateHeroNameOnView() {
         }, 1000); // Delay to allow the page to load before animating the hero name up
     }
 
-    const subtitle_div = document.querySelector('.subtitle-div');
+    const subtitle_div = document.querySelector('.subtitle-div, .project-hero-description');
     if (subtitle_div) {
         subtitle_div.style.opacity = '0';
         subtitle_div.style.transform = ANIMATION_TRANSFORM_SUBTITLE;
@@ -49,7 +49,7 @@ function animateHeroNameOnView() {
  * Animate section_headers and project-items when they enter the viewport.
  */
 function animateSectionHeadersOnView() {
-    const headers = document.querySelectorAll('.section_headers, .project-item, .about-content, .WhoIAm_AsADesigner, .WhoIAm_AsATeamPlayer');
+    const headers = document.querySelectorAll('.section_headers, .project-item, .about-content, .WhoIAm_AsADesigner, .WhoIAm_AsATeamPlayer, .project-role-and-software-skills,.project-description, .project-details-description, .project-details-image');
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
