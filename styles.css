@@ -285,7 +285,7 @@ a:focus{
 }
 @media only screen and (max-width: 768px) {
     .hero-video video {
-        height: 30vh; /* Adjust height for smaller screens */
+        height: 21vh; /* Adjust height for smaller screens */
     }
 }
 
@@ -502,7 +502,7 @@ a:focus{
     width: 30ch;
     margin-bottom: 1rem;
     padding: 0 1.5rem;
-    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    font-size: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 .project-details-image{
     width: 100%;
