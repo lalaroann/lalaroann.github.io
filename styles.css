@@ -449,11 +449,10 @@ a:focus{
     font-weight: 900; /* Black */
     margin-bottom: 1rem;
     opacity: 0;
-    /* color: red; */
 }
 .project-header{
     color: var(--color-accent-warm);
-    font-weight: 600;
+    font-weight: 900; /* Black */
     margin-bottom: 0;
     font-size: clamp(1.25rem, 1.5vw, 2rem);
 }
