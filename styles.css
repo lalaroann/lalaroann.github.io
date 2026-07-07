@@ -512,8 +512,18 @@ a:focus{
     /* background-color: blue;  */
     /* Temporary background color for visibility */
 }
+.project-details-video video{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem 0;
+    object-fit: cover;
+}
 @media only screen and (max-width: 768px) {
     .project-details-image {
+        height: auto; /* Adjust height for smaller screens */
+    }
+    .project-details-video video{
         height: auto; /* Adjust height for smaller screens */
     }
 }
