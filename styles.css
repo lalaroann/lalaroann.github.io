@@ -429,7 +429,7 @@ a:focus{
 /* ---------- Hero Image Styles ----------  */
 .hero-image {
     width: 100%;
-    height: auto;
+    height: 50vh;
     display: block;
     border-bottom-left-radius: var(--radius-xl);
     border-bottom-right-radius: var(--radius-xl);
@@ -439,7 +439,7 @@ a:focus{
 }
 @media only screen and (max-width: 768px) {
     .hero-image {
-        height: auto; /* Adjust height for smaller screens */
+        height: 21vh; /* Adjust height for smaller screens */
     }
 }
 
@@ -455,6 +455,11 @@ a:focus{
     font-weight: 900; /* Black */
     margin-bottom: 0;
     font-size: clamp(1.25rem, 1.5vw, 2rem);
+}
+.project-subheader{
+    font-weight: 700; /* Bold */
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 .project-hero-description{
     font-weight: 600; /* Regular */
