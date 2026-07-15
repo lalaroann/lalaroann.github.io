@@ -505,7 +505,9 @@ a:focus{
     font-weight: 600;
     width: 30ch;
     margin-bottom: 1rem;
-    padding: 0 1.5rem;
+    /* padding: 0 1.5rem; */
+    padding-left: 1.25em;
+    text-indent: -0.25em; /* Indent the first line to create a hanging effect */
     font-size: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 .project-details-image{
